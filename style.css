@@ -1,0 +1,4124 @@
+/* ===============================
+   GLOBAL RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ===============================
+   HTML
+================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ===============================
+   BODY
+================================= */
+
+body {
+    margin: 0;
+
+    overflow-x: hidden;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-weight: 400;
+
+    background-color: #0b0b0b;
+
+    color: #e6e2dc;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.2px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===============================
+   TYPOGRAPHY SYSTEM
+================================= */
+
+/* Main Headings */
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-weight: 400;
+
+    color: #f1ede7;
+
+    text-rendering: optimizeLegibility;
+
+    margin-top: 0;
+}
+
+
+/* H1 */
+
+h1 {
+    font-size: 68px;
+
+    line-height: 1.1;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* H2 */
+
+h2 {
+    font-size: 46px;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* H3 */
+
+h3 {
+    font-size: 20px;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.3px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Body Text */
+
+p {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    color: #b9b5af;
+
+    letter-spacing: 0.15px;
+
+    opacity: 0.9;
+
+    margin-top: 0;
+}
+
+
+/* ===============================
+   MOBILE TYPOGRAPHY
+================================= */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+}
+
+/* ===============================
+   GLOBAL SECTION SYSTEM
+================================= */
+
+section {
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    padding: 110px 8%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+
+    scroll-margin-top: 100px;
+}
+
+
+/* ===============================
+   SECTION HEADINGS
+================================= */
+
+section > h2 {
+    position: relative;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.5px;
+
+    color: #e6e2dc;
+
+    text-align: center;
+
+    margin: 0 0 20px;
+}
+
+
+/* ===============================
+   GOLD DECORATIVE LINE
+================================= */
+
+section > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 1px;
+
+    margin: 18px auto 0;
+
+    background: #c9a96a;
+
+    opacity: 0.7;
+}
+
+
+/* ===============================
+   SECTION INTRO TEXT
+================================= */
+
+section > p {
+    max-width: 640px;
+
+    margin: 0 auto;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #b9b5af;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 80px 6%;
+    }
+
+    section > h2 {
+        font-size: 34px;
+    }
+
+    section > p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80px;
+    padding: 0 6%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10, 10, 10, 0.88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    transition:
+        height 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* ===============================
+   SHRINK ON SCROLL
+================================= */
+
+nav.shrink {
+    height: 68px;
+
+    background: rgba(10, 10, 10, 0.96);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ===============================
+   LOGO
+================================= */
+
+nav .logo h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #e6e2dc;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.4s ease;
+}
+
+nav .logo h2:hover {
+    color: #c9a96a;
+    letter-spacing: 1.8px;
+}
+
+
+/* ===============================
+   NAVIGATION LINKS
+================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #d6d1c9;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    letter-spacing: 0.7px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* Underline */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: #c9a96a;
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.35s ease;
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+    color: #f1ede7;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ===============================
+   CATALOGUE BUTTON
+================================= */
+
+.nav-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 20px;
+
+    border: 1px solid rgba(201, 169, 106, 0.45);
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #e6e2dc;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 14px;
+
+    letter-spacing: 0.8px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.nav-btn:hover {
+    background: #c9a96a;
+
+    color: #111;
+
+    border-color: #c9a96a;
+
+    transform: translateY(-2px);
+}
+
+
+/* ===============================
+   MOBILE MENU BUTTON
+================================= */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #e6e2dc;
+    font: inherit;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+/* ===============================
+   HERO BRAND NAME
+================================= */
+
+.brand-name {
+    color: #c9a96a;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+/* ===============================
+   MOBILE NAVBAR
+================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        height: 70px;
+        padding: 0 6%;
+    }
+
+    nav.shrink {
+        height: 64px;
+    }
+
+    .menu-toggle {
+        display: flex;
+
+        order: 2;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px 0;
+
+        flex-direction: column;
+
+        gap: 22px;
+
+        background: rgba(10, 10, 10, 0.97);
+
+        backdrop-filter: blur(14px);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+}
+
+/* =========================================================
+   HERO SECTION
+   MAISON DU LOOM
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 8%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.84) 0%,
+            rgba(10, 10, 10, 0.68) 38%,
+            rgba(10, 10, 10, 0.30) 70%,
+            rgba(10, 10, 10, 0.12) 100%
+        ),
+        url("images/hero.jpg") center center / cover no-repeat;
+}
+
+
+/* =========================================================
+   SUBTLE DARKENING
+========================================================= */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.08),
+            transparent 35%,
+            rgba(0,0,0,0.28) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 620px;
+
+    text-align: left;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    animation:
+        fadeUp 1.2s cubic-bezier(.2,.7,.2,1) forwards;
+
+    animation-delay: 0.25s;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.hero-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    color: #c9a96a;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: 2.4px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.hero h1 {
+    margin: 0 0 24px;
+
+    color: #f8f5f0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: clamp(48px, 5.2vw, 76px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.8px;
+
+    text-align: left;
+
+    text-shadow:
+        0 3px 20px rgba(0,0,0,0.35);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero p {
+    max-width: 500px;
+
+    margin: 0 0 36px;
+
+    color: rgba(248,245,240,0.78);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.65;
+
+    letter-spacing: 0.25px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   HERO BUTTON — LUXURY STYLE
+========================================================= */
+
+.hero .btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 0;
+
+    padding: 10px 0 12px;
+
+    color: #d2b277;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+
+    text-transform: none;
+
+    text-decoration: none;
+
+    box-shadow: none;
+
+    overflow: visible;
+
+    transition:
+        color 0.4s ease,
+        letter-spacing 0.4s ease;
+}
+
+
+/* Remove the old global button fill effect */
+
+.hero .btn::before {
+    display: none;
+}
+
+
+/* Elegant gold line */
+
+.hero .btn::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 3px;
+
+    width: 38px;
+    height: 1px;
+
+    background: #c9a96a;
+
+    transition:
+        width 0.5s cubic-bezier(.2,.7,.2,1);
+}
+
+
+/* Arrow */
+
+.hero .btn span {
+    display: inline-block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* Hover */
+
+.hero .btn:hover {
+    color: #ffffff;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    transform: none;
+
+    letter-spacing: 1.6px;
+}
+
+
+.hero .btn:hover::after {
+    width: 100%;
+}
+
+
+.hero .btn:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   ENTRANCE ANIMATION
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 0 7%;
+    }
+
+    .hero-content {
+        max-width: 570px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 90vh;
+
+        padding:
+            100px 25px
+            70px;
+        
+        align-items: center;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(10,10,10,0.78),
+                rgba(10,10,10,0.42)
+            ),
+            url("images/hero.jpg") center center / cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 12px;
+
+        letter-spacing: 2.4px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 58px);
+
+        line-height: 1.08;
+
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        max-width: 440px;
+
+        font-size: 17px;
+
+        line-height: 1.55;
+
+        margin-bottom: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+}
+
+/* =========================================================
+   COLLECTIONS
+   MAISON DU LOOM
+========================================================= */
+
+#collection {
+    position: relative;
+    margin-top: 90px;
+    padding: 30px 0 110px;
+}
+
+#collection .collections-container {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 70px auto 0;
+    padding: 0 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 34px;
+}
+
+
+/* =========================================================
+   COLLECTION CARD
+========================================================= */
+
+#collection .collection-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 380px;
+    height: 540px;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #111;
+
+    border: 1px solid rgba(201, 169, 106, 0.22);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.35),
+        0 5px 15px rgba(0, 0, 0, 0.18);
+
+    isolation: isolate;
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.7,.2,1),
+        box-shadow 0.7s ease,
+        border-color 0.7s ease;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+#collection .collection-card img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transform: scale(1.02);
+
+    filter:
+        brightness(0.82)
+        contrast(1.03)
+        saturate(0.90);
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.7,.2,1),
+        filter 0.8s ease;
+}
+
+
+/* =========================================================
+   DARK GRADIENT
+========================================================= */
+
+#collection .collection-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.02) 0%,
+            rgba(0,0,0,0.04) 35%,
+            rgba(0,0,0,0.25) 58%,
+            rgba(0,0,0,0.90) 100%
+        );
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+#collection .collection-card-content {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 5;
+
+    padding: 55px 34px 32px;
+
+    text-align: left;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.94) 0%,
+            rgba(0,0,0,0.68) 35%,
+            rgba(0,0,0,0.12) 78%,
+            transparent 100%
+        );
+
+    transition: padding 0.5s ease;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+#collection .collection-card-content h3 {
+    margin: 0 0 10px;
+
+    color: #f8f5f0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    line-height: 1.15;
+
+    font-weight: 500;
+
+    letter-spacing: 0.4px;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,0.55);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+#collection .collection-card-content p {
+    margin: 0 0 24px;
+
+    max-width: 280px;
+
+    color: rgba(248,245,240,0.78);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   EXPLORE LINK
+========================================================= */
+
+#collection .collection-card-content a {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-bottom: 8px;
+
+    color: #d2b277;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.3px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.4s ease,
+        letter-spacing 0.4s ease;
+}
+
+
+#collection .collection-card-content a::before {
+    content: "→";
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    opacity: 0.75;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+
+#collection .collection-card-content a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 30px;
+    height: 1px;
+
+    background: #c9a96a;
+
+    transition:
+        width 0.5s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+#collection .collection-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(201,169,106,0.42);
+
+    box-shadow:
+        0 28px 60px rgba(0,0,0,0.42);
+}
+
+
+#collection .collection-card:hover img {
+    transform: scale(1.055);
+
+    filter:
+        brightness(0.86)
+        contrast(1.04)
+        saturate(0.94);
+}
+
+
+#collection .collection-card-content a:hover {
+    color: #ffffff;
+
+    letter-spacing: 1.8px;
+}
+
+
+#collection .collection-card-content a:hover::before {
+    transform: translateX(4px);
+
+    opacity: 1;
+}
+
+
+#collection .collection-card-content a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #collection .collections-container {
+        gap: 22px;
+    }
+
+    #collection .collection-card {
+        height: 500px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    #collection {
+        margin-top: 60px;
+        padding: 30px 20px 80px;
+    }
+
+    #collection .collections-container {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 30px;
+
+        margin-top: 45px;
+
+        padding: 0;
+    }
+
+    #collection .collection-card {
+        width: 100%;
+        max-width: 380px;
+
+        height: 500px;
+
+        flex: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    #collection .collection-card {
+        height: 470px;
+
+        border-radius: 14px;
+    }
+
+    #collection .collection-card-content {
+        padding: 48px 25px 28px;
+    }
+
+    #collection .collection-card-content h3 {
+        font-size: 25px;
+    }
+
+    #collection .collection-card-content p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   ABOUT / OUR STORY
+========================================================= */
+
+.about {
+    position: relative;
+
+    padding: 150px 8%;
+
+    background: #1c1c1c;
+}
+
+
+.about-container {
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 90px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.about-image {
+    flex: 1;
+
+    min-width: 320px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.about-image img {
+    width: 100%;
+
+    max-width: 540px;
+
+    height: 620px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 4px;
+
+    border: 1px solid rgba(201, 169, 106, 0.18);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45);
+
+    filter:
+        brightness(0.92)
+        contrast(1.04)
+        saturate(0.92);
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.7,.2,1),
+        box-shadow 0.8s ease;
+}
+
+
+.about-image img:hover {
+    transform: scale(1.015);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   DECORATIVE GOLD FRAME
+========================================================= */
+
+.about-image::before {
+    display: none;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.about-text {
+    flex: 1;
+
+    min-width: 320px;
+
+    max-width: 520px;
+
+    text-align: left;
+}
+
+
+.small-title {
+    margin: 0 0 18px;
+
+    color: #c9a96a;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 2.8px;
+
+    text-transform: uppercase;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.about-text h2 {
+    margin: 0 0 22px;
+
+    color: #f4eee5;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    letter-spacing: -0.5px;
+}
+
+
+.about-text h2 span {
+    color: #c9a96a;
+
+    font-size: 0.65em;
+
+    letter-spacing: 1px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   GOLD LINE
+========================================================= */
+
+.about .gold-line {
+    width: 52px;
+    height: 1px;
+
+    margin: 30px 0 32px;
+
+    background: #c9a96a;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-text p:not(.small-title) {
+    margin: 0 0 14px;
+
+    max-width: 470px;
+
+    color: #c8c2ba;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   ABOUT BUTTON
+========================================================= */
+
+.about-btn {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 18px;
+
+    padding: 10px 0 12px;
+
+    color: #d2b277;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.1px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.4s ease,
+        letter-spacing 0.4s ease;
+}
+
+
+.about-btn::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 3px;
+
+    width: 38px;
+
+    height: 1px;
+
+    background: #c9a96a;
+
+    transition:
+        width 0.5s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.about-btn:hover {
+    color: #ffffff;
+
+    letter-spacing: 1.5px;
+}
+
+
+.about-btn:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   FEATURES
+================================= */
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 8%;
+}
+
+.feature {
+    position: relative;
+
+    min-height: 210px;
+    padding: 42px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.012)
+    );
+
+    border: 1px solid rgba(201,169,110,0.16);
+    border-radius: 2px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+
+    box-sizing: border-box;
+}
+
+/* Subtle gold accent */
+
+.feature::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 45px;
+    height: 1px;
+
+    background: #c9a96e;
+
+    transition: width 0.4s ease;
+}
+
+/* Soft background glow */
+
+.feature::after {
+    content: "";
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: -60px;
+    right: -60px;
+
+    background: rgba(201,169,110,0.06);
+
+    border-radius: 50%;
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+/* Hover */
+
+.feature:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(201,169,110,0.45);
+
+    background: linear-gradient(
+        145deg,
+        rgba(201,169,110,0.06),
+        rgba(255,255,255,0.015)
+    );
+}
+
+.feature:hover::before {
+    width: 80px;
+}
+
+/* Heading */
+
+.feature h3 {
+    margin: 0 0 12px;
+
+    color: #f1ede7;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    letter-spacing: 0.3px;
+}
+
+/* Description */
+
+.feature p {
+    margin: 0;
+
+    color: #aaa49b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 220px;
+}
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media (max-width: 900px) {
+
+    .features-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        padding: 0 6%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .features-container {
+        grid-template-columns: 1fr;
+
+        margin: 70px auto;
+    }
+
+    .feature {
+        min-height: 180px;
+        padding: 35px 25px;
+    }
+
+}
+
+/* ===============================
+   CRAFTING STANDARDS
+================================= */
+
+.standards {
+    padding: 120px 8%;
+}
+
+.standards .small-title {
+    display: block;
+    text-align: center;
+    color: #c9a96e;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.standards h2 {
+    margin-bottom: 20px;
+}
+
+.standards-subtitle {
+    max-width: 700px;
+    margin: 0 auto 70px;
+    color: #b9b5af;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.standards-container {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+
+.standard {
+    padding: 10px 35px 20px;
+    text-align: center;
+
+    border-right: 1px solid rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.standard:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255,255,255,0.025);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+}
+
+.standard:last-child {
+    border-right: none;
+}
+
+.standard-number {
+    display: block;
+
+    color: #c9a96e;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.standard h3 {
+    text-align: center;
+    font-size: 21px;
+    color: #f1ede7;
+
+    margin: 0 0 18px;
+}
+
+.standard p {
+    max-width: 230px;
+    margin: 0 auto;
+
+    font-size: 14px;
+    line-height: 1.8;
+    color: #9f9b95;
+}
+
+
+/* ===============================
+   STANDARDS — MOBILE
+================================= */
+
+@media (max-width: 900px) {
+
+    .standards-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+    }
+
+    .standard:nth-child(2) {
+        border-right: none;
+    }
+
+    .standard:nth-child(3),
+    .standard:nth-child(4) {
+        border-top: 1px solid rgba(255,255,255,0.08);
+        padding-top: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .standards {
+        padding: 90px 6%;
+    }
+
+    .standards-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .standard {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding: 0 10px 40px;
+    }
+
+    .standard:last-child {
+        border-bottom: none;
+    }
+
+    .standard:nth-child(3),
+    .standard:nth-child(4) {
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
+/* ===========================
+   WHY CHOOSE MAISON DU LOOM
+=========================== */
+
+.why-us {
+    padding: 120px 8%;
+    text-align: center;
+    background: #1c1c1c;
+}
+
+.why-us > h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #f1ede7;
+    margin: 0 0 20px;
+    letter-spacing: 0.5px;
+}
+
+.why-us > h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 1px;
+    background: #c9a96a;
+    margin: 18px auto 0;
+}
+
+.why-subtitle {
+    max-width: 650px;
+    margin: 0 auto 65px;
+
+    color: #aaa59e;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* ===========================
+   WHY CARDS
+=========================== */
+
+.why-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.why-card {
+    position: relative;
+
+    padding: 55px 40px;
+
+    min-height: 280px;
+
+    background: rgba(255, 255, 255, 0.018);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border-color: rgba(201, 169, 106, 0.35);
+}
+
+
+/* ===========================
+   ICON
+=========================== */
+
+.why-icon {
+    font-size: 28px;
+
+    color: #c9a96a;
+
+    margin-bottom: 24px;
+
+    line-height: 1;
+
+    transition: transform 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+    transform: translateY(-3px);
+}
+
+
+/* ===========================
+   CARD TITLE
+=========================== */
+
+.why-card h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    color: #f1ede7;
+
+    margin: 0 0 15px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ===========================
+   CARD TEXT
+=========================== */
+
+.why-card p {
+    max-width: 280px;
+
+    margin: 0;
+
+    color: #aaa59e;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+
+    .why-us {
+        padding: 90px 6%;
+    }
+
+    .why-us > h2 {
+        font-size: 30px;
+    }
+
+    .why-subtitle {
+        font-size: 14px;
+        margin-bottom: 45px;
+    }
+
+    .why-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .why-card {
+        min-height: 240px;
+        padding: 45px 30px;
+    }
+
+    .why-card h3 {
+        font-size: 20px;
+    }
+
+    .why-card p {
+        font-size: 13px;
+    }
+}
+
+/* ===========================
+   OUR CRAFTING PROCESS
+=========================== */
+
+.process {
+    padding: 130px 8%;
+    text-align: center;
+    background: #1c1c1c;
+}
+
+.process > h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+    font-weight: 400;
+
+    color: #f1ede7;
+
+    margin: 0 0 20px;
+
+    letter-spacing: 0.5px;
+}
+
+.process > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 1px;
+
+    background: #c9a96a;
+
+    margin: 18px auto 0;
+}
+
+.process-subtitle {
+    max-width: 650px;
+
+    margin: 0 auto 75px;
+
+    color: #aaa59e;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* ===========================
+   PROCESS CONTAINER
+=========================== */
+
+.process-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0;
+}
+
+
+/* ===========================
+   PROCESS STEP
+=========================== */
+
+.process-step {
+    position: relative;
+
+    padding: 25px 45px 35px;
+
+    min-height: 250px;
+
+    text-align: center;
+
+    background: transparent;
+
+    border: none;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* Vertical divider */
+
+.process-step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 20px;
+    right: 0;
+
+    width: 1px;
+    height: 210px;
+
+    background: rgba(201, 169, 106, 0.16);
+}
+
+
+/* ===========================
+   PROCESS NUMBER
+=========================== */
+
+.process-number {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    color: #c9a96a;
+
+    margin-bottom: 22px;
+
+    line-height: 1;
+}
+
+
+/* ===========================
+   PROCESS TITLE
+=========================== */
+
+.process-step h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    color: #f1ede7;
+
+    margin: 0 0 15px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ===========================
+   PROCESS DESCRIPTION
+=========================== */
+
+.process-step p {
+    max-width: 280px;
+
+    margin: 0 auto;
+
+    color: #aaa59e;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ===========================
+   HOVER
+=========================== */
+
+.process-step:hover {
+    transform: translateY(-5px);
+}
+
+.process-step:hover .process-number {
+    color: #d7b978;
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .process {
+        padding: 90px 6%;
+    }
+
+    .process > h2 {
+        font-size: 30px;
+    }
+
+    .process-subtitle {
+        font-size: 14px;
+
+        margin-bottom: 50px;
+    }
+
+    .process-container {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .process-step {
+        min-height: auto;
+
+        padding: 40px 25px;
+    }
+
+    .process-step:not(:last-child)::after {
+        top: auto;
+        right: 20%;
+
+        bottom: 0;
+
+        width: 60%;
+        height: 1px;
+    }
+
+    .process-number {
+        font-size: 34px;
+    }
+
+    .process-step h3 {
+        font-size: 21px;
+    }
+
+    .process-step p {
+        font-size: 13px;
+    }
+}
+
+/* ===============================
+   SHOWCASE
+================================= */
+
+.showcase{
+    height: 650px;
+    margin: 120px 0;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+        url("images/showcase.jpg") center/cover no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+
+/* ===============================
+   SUBTLE EDGE EFFECT
+================================= */
+
+.showcase::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201, 169, 106, 0.06),
+            transparent 30%,
+            transparent 70%,
+            rgba(201, 169, 106, 0.06)
+        );
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   OVERLAY
+================================= */
+
+.showcase-overlay {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+
+    padding: 50px 30px;
+}
+
+
+/* ===============================
+   HEADING
+================================= */
+
+.showcase h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+
+    font-size: 56px;
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.5px;
+
+    color: #f5f1ea;
+
+    margin: 0 0 25px;
+}
+
+
+/* Gold decorative line */
+
+.showcase h2::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 1px;
+
+    background: #c9a96a;
+
+    margin: 22px auto 0;
+}
+
+
+/* ===============================
+   DESCRIPTION
+================================= */
+
+.showcase p {
+    max-width: 620px;
+
+    margin: 25px auto 35px;
+
+    color: #d0cbc3;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ===============================
+   BUTTON
+================================= */
+
+.showcase-btn{
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #e6e2dc;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.showcase-btn:hover{
+    background: #c9a96e;
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: none;
+}
+
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    .showcase {
+        min-height: 520px;
+
+        margin: 80px 0;
+    }
+
+    .showcase-overlay {
+        padding: 40px 25px;
+    }
+
+    .showcase h2 {
+        font-size: 38px;
+    }
+
+    .showcase p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .showcase-btn {
+        padding: 12px 24px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* ===========================
+   TESTIMONIALS
+=========================== */
+
+.testimonials {
+    padding: 130px 8%;
+    text-align: center;
+    background: #1c1c1c;
+}
+
+.testimonials > h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 38px;
+    font-weight: 400;
+
+    color: #f1ede7;
+
+    margin: 0 0 20px;
+
+    letter-spacing: 0.5px;
+}
+
+.testimonials > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 1px;
+
+    background: #c9a96a;
+
+    margin: 18px auto 0;
+}
+
+.testimonial-subtitle {
+    max-width: 650px;
+
+    margin: 0 auto 75px;
+
+    color: #aaa59e;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* ===========================
+   TESTIMONIAL CONTAINER
+=========================== */
+
+.testimonial-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0;
+}
+
+
+/* ===========================
+   TESTIMONIAL CARD
+=========================== */
+
+.testimonial-card {
+    position: relative;
+
+    padding: 35px 45px 40px;
+
+    min-height: 300px;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    text-align: center;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+/* Elegant separators */
+
+.testimonial-card:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    right: 0;
+
+    width: 1px;
+    height: 250px;
+
+    background: rgba(201, 169, 106, 0.16);
+}
+
+
+/* ===========================
+   QUOTE
+=========================== */
+
+.quote {
+    font-family: Georgia, serif;
+
+    font-size: 58px;
+
+    line-height: 0.7;
+
+    color: #c9a96a;
+
+    margin-bottom: 28px;
+
+    opacity: 0.8;
+}
+
+
+/* ===========================
+   TESTIMONIAL TEXT
+=========================== */
+
+.testimonial-card p {
+    max-width: 270px;
+
+    margin: 0 auto;
+
+    color: #c8c2ba;
+
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+}
+
+
+/* ===========================
+   CLIENT NAME
+=========================== */
+
+.testimonial-card h3 {
+    margin: 28px 0 6px;
+
+    color: #f1ede7;
+
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ===========================
+   CLIENT ROLE
+=========================== */
+
+.testimonial-card span {
+    color: #9f9b95;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* ===========================
+   HOVER
+=========================== */
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card:hover .quote {
+    opacity: 1;
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .testimonials {
+        padding: 90px 6%;
+    }
+
+    .testimonials > h2 {
+        font-size: 30px;
+    }
+
+    .testimonial-subtitle {
+        font-size: 14px;
+
+        margin-bottom: 50px;
+    }
+
+    .testimonial-container {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        min-height: auto;
+
+        padding: 45px 25px;
+    }
+
+    .testimonial-card:not(:last-child)::after {
+        top: auto;
+        right: 20%;
+
+        bottom: 0;
+
+        width: 60%;
+        height: 1px;
+    }
+
+    .testimonial-card p {
+        font-size: 16px;
+    }
+}
+
+/* ===========================
+   MAISON DU LOOM PROMISE
+=========================== */
+
+.testimonials {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.testimonial-card {
+    padding: 40px 45px;
+}
+
+.testimonial-card .promise-number{
+    font-size: 42px;
+    font-weight: 400;
+    color: #c9a96e;
+    margin-bottom: 24px;
+}
+
+.testimonial-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    font-weight: 400;
+    color: #f1ede7;
+    margin-bottom: 16px;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #c5c0b9;
+    font-style: normal;
+}
+
+.testimonial-card span {
+    display: block;
+    margin-top: 24px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a99776;
+}
+
+.testimonial-card h3 {
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+/* ===========================
+CTA SECTION
+=========================== */
+
+.cta {
+    padding: 140px 8%;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #f1ede7;
+    margin-bottom: 25px;
+}
+
+.cta h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #c9a96e;
+    margin: 22px auto 0;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #b9b5af;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.cta .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 35px;
+    padding: 10px 0 12px;
+
+    color: #d2b277;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.4s ease,
+        letter-spacing 0.4s ease;
+}
+
+.cta .btn::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 38px;
+    height: 1px;
+
+    background: #c9a96a;
+
+    transition: width 0.5s cubic-bezier(.2,.7,.2,1);
+}
+
+.cta .btn:hover {
+    color: #ffffff;
+    letter-spacing: 1.5px;
+}
+
+.cta .btn:hover::after {
+    width: 100%;
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact {
+    padding: 120px 8%;
+    text-align: center;
+}
+
+/* Contact heading */
+
+.contact > h2 {
+    font-size: 42px;
+    font-weight: 400;
+    color: #f1ede7;
+    margin-bottom: 20px;
+}
+
+/* Small gold line below heading */
+
+.contact > h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #c9a96a;
+    margin: 18px auto 0;
+}
+
+/* Subtitle */
+
+.contact-subtitle {
+    max-width: 640px;
+    margin: 0 auto 70px;
+
+    color: #b9b5af;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Main contact layout */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 70px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+/* Left side */
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Individual contact item */
+
+.contact-item {
+    padding: 25px 0;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Contact item heading */
+
+.contact-item h3 {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    color: #f1ede7;
+
+    margin-bottom: 10px;
+}
+
+/* Contact item text */
+
+.contact-item p {
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #b9b5af;
+
+    margin: 0;
+}
+
+/* Right contact box */
+
+.contact-box {
+    flex: 1;
+    min-width: 300px;
+
+    padding: 55px 50px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    transition: all 0.3s ease;
+}
+
+/* Subtle hover */
+
+.contact-box:hover {
+    border-color: rgba(201, 169, 106, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Contact box heading */
+
+.contact-box h3 {
+    color: #c9a96a;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+/* Contact box paragraph */
+
+.contact-box p {
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #b9b5af;
+
+    margin-bottom: 30px;
+}
+
+/* Email button */
+
+.contact-box .about-btn {
+    align-self: flex-start;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+.contact {
+    padding: 80px 6%;
+}
+
+.contact > h2 {
+    font-size: 34px;
+}
+
+.contact-container {
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-info,
+.contact-box {
+    min-width: 100%;
+}
+
+.contact-box {
+    padding: 40px 30px;
+}
+
+.contact-box h3 {
+    font-size: 26px;
+}
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+    background: #0e0e0e;
+    padding: 80px 8% 30px;
+    text-align: center;
+}
+
+/* Footer main layout */
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    text-align: left;
+}
+
+/* ===========================
+   FOOTER BRAND
+=========================== */
+
+.footer-brand {
+    flex: 2;
+    min-width: 260px;
+}
+
+.footer-brand h2 {
+    color: #f1ede7;
+    font-size: 32px;
+    font-weight: 400;
+
+    margin-bottom: 16px;
+}
+
+.footer-brand p {
+    max-width: 400px;
+
+    color: #9f9b95;
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+/* ===========================
+   FOOTER LINKS
+=========================== */
+
+.footer-links {
+    flex: 1;
+    min-width: 160px;
+}
+
+.footer-links h3 {
+    color: #cfcac2;
+
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.footer-links a {
+    display: block;
+
+    color: #9f9b95;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    margin-bottom: 12px;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* IMPORTANT: this was incomplete in your CSS */
+
+.footer-links a:hover {
+    color: #c9a96a;
+    transform: translateX(3px);
+}
+
+/* ===========================
+   FOOTER CONTACT
+=========================== */
+
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-contact h3 {
+    color: #cfcac2;
+
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.footer-contact p {
+    color: #9f9b95;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   FOOTER DIVIDER
+=========================== */
+
+.footer hr {
+    border: none;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    max-width: 1100px;
+    margin: 55px auto 22px;
+}
+
+/* ===========================
+   COPYRIGHT
+=========================== */
+
+.footer .copyright {
+    text-align: center;
+
+    color: #7e7a74;
+
+    font-size: 12px;
+    letter-spacing: 0.5px;
+
+    margin: 0;
+}
+
+/* ===========================
+   MOBILE FOOTER
+=========================== */
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding: 70px 6% 25px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 45px;
+
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+        min-width: 100%;
+    }
+
+    .footer-brand p {
+        margin: 0 auto;
+    }
+
+    .footer-links a:hover {
+        transform: none;
+    }
+
+    .footer hr {
+        margin-top: 45px;
+    }
+}
+
+/* =========================
+   LUXURY LOADER
+========================= */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #0b0b0b;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    z-index: 9999;
+
+    transition: opacity 0.6s ease;
+}
+
+html.js #loader {
+    display: flex;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+#loader .loader-brand {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 48px;
+    color: #f1ede7;
+    letter-spacing: 2px;
+    margin: 0 0 35px;
+}
+
+.loader-line {
+    width: 120px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+
+    margin-top: 20px;
+
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.loader-line::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: #c9a96e;
+
+    animation: loaderAnimation 1.8s ease-in-out infinite;
+}
+
+@keyframes loaderAnimation {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* ===============================
+   WHATSAPP
+================================= */
+
+.whatsapp-btn {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(18, 18, 18, 0.88);
+
+    border: 1px solid rgba(201, 169, 106, 0.45);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    z-index: 9999;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* WhatsApp Icon */
+
+.whatsapp-btn img {
+    width: 21px;
+    height: 21px;
+
+    opacity: 0.85;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* Hover */
+
+.whatsapp-btn:hover {
+    background: #c9a96a;
+
+    border-color: #c9a96a;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.whatsapp-btn:hover img {
+    opacity: 1;
+
+    transform: scale(1.08);
+}
+
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    .whatsapp-btn {
+        width: 46px;
+        height: 46px;
+
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .whatsapp-btn img {
+        width: 19px;
+        height: 19px;
+    }
+
+}
+
+/* ===============================
+CARD – LUXURY BASE
+================================= */
+
+.card{
+    width: 100%;
+    max-width: 360px;
+    margin: 20px auto;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap:20px;
+    height:auto;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}
+
+.flex-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+a{
+    color: inherit;
+    text-decoration:none;
+    transition: color 0.3s ease;
+}
+
+
+/* =========================
+   CRAFTSMANSHIP
+========================= */
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+
+  margin: 80px auto 0;
+
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0 20px;
+}
+
+/* =========================================================
+   CRAFTSMANSHIP CARDS
+========================================================= */
+
+.gallery .product {
+    position: relative;
+
+    flex: 1 1 0;
+    width: 0;
+    height: 520px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #111;
+
+    border: 1px solid rgba(201, 169, 106, 0.20);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.35);
+
+    isolation: isolate;
+
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease,
+        border-color 0.6s ease;
+}
+
+
+/* Image */
+
+.gallery .product img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    object-fit: cover;
+
+    display: block;
+
+    transform: scale(1.02);
+
+    filter:
+        brightness(0.78)
+        contrast(1.04)
+        saturate(0.90);
+
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+
+/* Dark luxury gradient */
+
+.gallery .product::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 35%,
+            rgba(0,0,0,0.15) 55%,
+            rgba(0,0,0,0.90) 100%
+        );
+}
+
+
+/* Card title */
+
+.gallery .product .card-title {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 82px;
+
+    z-index: 5;
+
+    margin: 0;
+
+    color: #f4eee5;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.6px;
+
+    text-align: left;
+}
+
+
+/* Card description */
+
+.gallery .product .card-text {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 48px;
+
+    z-index: 5;
+
+    margin: 0;
+
+    color: rgba(244,238,229,0.75);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    text-align: left;
+}
+
+
+/* Link */
+
+.gallery .product > a {
+    position: absolute;
+
+    left: 30px;
+    bottom: 20px;
+
+    z-index: 5;
+
+    color: #d2b277;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 14px;
+
+    letter-spacing: 1.2px;
+
+    text-decoration: none;
+}
+
+
+/* Hover */
+
+.gallery .product:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(201,169,106,0.42);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.45);
+}
+
+
+.gallery .product:hover img {
+    transform: scale(1.055);
+
+    filter:
+        brightness(0.84)
+        contrast(1.04)
+        saturate(0.94);
+}
+
+#craftsmanship{
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card-title{
+  color: #C9A96A;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+}
+
+.collection-subtitle{
+    max-width: 600px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+    color:#cfcfcf;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* ===============================
+   LUXURY SECTION DIVIDERS
+================================= */
+
+section + section {
+    position: relative;
+}
+
+
+/* Subtle central gold detail */
+
+section + section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 60px;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #c9a96a,
+        transparent
+    );
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   GLOBAL CONTAINER
+================================= */
+
+.container {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+}
+
+/* =============================
+   SCROLL REVEAL ANIMATION
+================================= */
+
+.reveal {
+    opacity: 1;
+    transform: none;
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.2, .7, .2, 1);
+}
+
+html.js .reveal:not(.active) {
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+/* Active state */
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 0.05s;
+}
+
+/* Accessible keyboard focus and reduced-motion support */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #d2b277;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.contact-item a,
+.footer-contact a {
+    color: #d2b277;
+    text-decoration: underline;
+    text-decoration-color: rgba(210, 178, 119, 0.45);
+    text-underline-offset: 4px;
+}
+
+.contact-item a:hover,
+.footer-contact a:hover {
+    color: #f1ede7;
+    text-decoration-color: currentColor;
+}
+
+/* Trade and export information */
+.trade {
+    padding: 120px 8%;
+    background: #1c1c1c;
+    text-align: center;
+}
+
+.trade-intro {
+    max-width: 650px;
+    margin: 0 auto 60px;
+}
+
+.trade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.trade-card {
+    position: relative;
+    display: flex;
+    min-height: 210px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 38px 30px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+    border: 1px solid rgba(201, 169, 110, 0.16);
+    border-radius: 2px;
+    transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.trade-card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 1px;
+    background: #c9a96a;
+    content: "";
+    transition: width 0.4s ease;
+}
+
+.trade-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201, 169, 110, 0.45);
+    background: linear-gradient(145deg, rgba(201, 169, 110, 0.06), rgba(255, 255, 255, 0.015));
+}
+
+.trade-card:hover::before {
+    width: 80px;
+}
+
+.trade-card h3 {
+    margin: 0 0 12px;
+    color: #f1ede7;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.trade-card p {
+    max-width: 300px;
+    margin: 0;
+    color: #aaa49b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.trade-quality {
+    max-width: 850px;
+    margin: 34px auto 0;
+    color: #aaa59e;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.trade-quality strong {
+    color: #d2b277;
+    font-weight: 500;
+}
+
+.trade-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 12px 20px;
+    border: 1px solid rgba(201, 169, 106, 0.5);
+    border-radius: 2px;
+    color: #d2b277;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.trade-cta:hover {
+    background: #c9a96a;
+    border-color: #c9a96a;
+    color: #111;
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+    nav {
+        padding-right: 3%;
+        padding-left: 3%;
+    }
+
+    nav .logo h2 {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .trade-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Static trade enquiry form */
+.trade-enquiry {
+    max-width: 900px;
+    margin: 64px auto 0;
+    padding: 48px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+}
+
+.trade-enquiry > h3 {
+    margin: 0 0 8px;
+    color: #f1ede7;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.trade-enquiry-intro {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: #aaa59e;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.trade-form[hidden],
+#trade-whatsapp-fallback[hidden] {
+    display: none;
+}
+
+.trade-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.trade-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.trade-field-full {
+    grid-column: 1 / -1;
+}
+
+.trade-field label {
+    color: #e6e2dc;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.trade-field input,
+.trade-field select,
+.trade-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 11px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.24);
+    color: #f1ede7;
+    font: inherit;
+    font-size: 15px;
+}
+
+.trade-field select option {
+    background: #111;
+    color: #f1ede7;
+}
+
+.trade-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.trade-field input::placeholder,
+.trade-field textarea::placeholder {
+    color: #9f9b95;
+    opacity: 1;
+}
+
+.trade-field input:focus-visible,
+.trade-field select:focus-visible,
+.trade-field textarea:focus-visible {
+    outline: 2px solid #d2b277;
+    outline-offset: 2px;
+    border-color: #d2b277;
+}
+
+.trade-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 13px 20px;
+    border: 1px solid rgba(201, 169, 106, 0.5);
+    border-radius: 2px;
+    background: transparent;
+    color: #d2b277;
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.trade-submit:hover {
+    background: #c9a96a;
+    border-color: #c9a96a;
+    color: #111;
+}
+
+.trade-form-status {
+    margin-top: 18px;
+    color: #d2b277;
+    font-size: 14px;
+}
+
+.trade-email-alt {
+    margin: 20px 0 0;
+    color: #aaa59e;
+    font-size: 14px;
+}
+
+.trade-email-alt a {
+    color: #d2b277;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.trade-enquiry .trade-cta {
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    .trade {
+        padding: 90px 6%;
+    }
+
+    .trade-intro {
+        margin-bottom: 42px;
+    }
+
+    .trade-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .trade-card {
+        min-height: 190px;
+        padding: 30px 24px;
+    }
+
+    .trade-enquiry {
+        margin-top: 48px;
+        padding-top: 38px;
+    }
+}
+
+@media (max-width: 600px) {
+    .trade-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 0;
+    }
+
+    .trade-card {
+        min-height: 0;
+        padding: 28px 24px;
+    }
+
+    .trade-quality {
+        margin-top: 28px;
+    }
+
+    .trade-enquiry {
+        margin-top: 42px;
+        padding-top: 30px;
+    }
+
+    .trade-enquiry > h3 {
+        font-size: 24px;
+    }
+
+    .trade-form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .trade-field-full {
+        grid-column: auto;
+    }
+
+    .trade-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
