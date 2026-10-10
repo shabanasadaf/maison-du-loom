@@ -1,115 +1,82 @@
-// Enable progressive enhancements only when this script is available.
-document.documentElement.classList.add("js");
+const menuButton = document.querySelector(".menu-toggle");
+const navigationLinks = document.querySelector(".nav-links");
+const siteHeader = document.querySelector(".site-header");
 
-const loader = document.getElementById("loader");
-const reveals = document.querySelectorAll(".reveal");
-const nav = document.querySelector("nav");
-const hero = document.querySelector(".hero");
-const toggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-// Reveal sections as they enter view. Without JavaScript, all sections remain visible.
-if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-  reveals.forEach((el) => el.classList.add("active"));
-} else {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: "0px 0px -80px 0px" });
-
-  reveals.forEach((el) => revealObserver.observe(el));
+if (siteHeader) {
+  const updateHeader = () => siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
-// Keep scroll effects lightweight and usable on touch devices.
-function updateScrollEffects() {
-  if (nav) {
-    nav.classList.toggle("shrink", window.scrollY > 50);
-  }
-
-  if (hero && !prefersReducedMotion) {
-    hero.style.backgroundPositionY =
-      window.innerWidth > 768 ? String(window.scrollY * 0.4) + "px" : "center";
-  }
-}
-
-window.addEventListener("scroll", updateScrollEffects, { passive: true });
-window.addEventListener("resize", updateScrollEffects);
-updateScrollEffects();
-
-// Dismiss the decorative loader after the document is parsed; do not wait for
-// every full-size image or external resource to finish downloading.
-if (loader) {
-  document.body.classList.add("loading");
-
-  const hideLoader = () => {
-    window.setTimeout(() => {
-      loader.style.opacity = "0";
-      window.setTimeout(() => {
-        loader.style.display = "none";
-        loader.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("loading");
-      }, 600);
-    }, 100);
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", hideLoader, { once: true });
-  } else {
-    hideLoader();
-  }
-}
-
-// Accessible mobile navigation.
-if (toggle && navLinks) {
+if (menuButton && navigationLinks) {
   const closeMenu = (returnFocus = false) => {
-    navLinks.classList.remove("active");
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open menu");
-    toggle.textContent = "☰";
-    if (returnFocus) toggle.focus();
+    navigationLinks.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
+    if (returnFocus) menuButton.focus();
   };
 
-  toggle.addEventListener("click", () => {
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-    if (isOpen) {
-      closeMenu();
-    } else {
-      navLinks.classList.add("active");
-      toggle.setAttribute("aria-expanded", "true");
-      toggle.setAttribute("aria-label", "Close menu");
-      toggle.textContent = "×";
-    }
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    navigationLinks.classList.toggle("active", !isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
   });
 
-  navLinks.addEventListener("click", (event) => {
+  navigationLinks.addEventListener("click", (event) => {
     if (event.target.closest("a")) closeMenu();
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
       closeMenu(true);
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".navigation") && menuButton.getAttribute("aria-expanded") === "true") {
+      closeMenu();
     }
   });
 }
 
-// GitHub Pages is static, so prepare a WhatsApp draft instead of posting to a server.
+const revealTargets = document.querySelectorAll(
+  ".intro-copy, .collection-card, .craft-image-wrap, .craft-copy, .craft-list article, .materials-intro, .materials-list article, .material-image, .atelier-image, .atelier-copy, .why-heading, .why-list article, .journal-top, .journal-image, .journal-copy, .quote-section, .closing-content, .contact-copy, .enquiry-card"
+);
+
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.documentElement.classList.add("reveal-ready");
+  revealTargets.forEach((element, index) => {
+    element.dataset.reveal = "";
+    element.style.transitionDelay = `${Math.min(index % 3, 2) * 70}ms`;
+  });
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -36px 0px" });
+
+  revealTargets.forEach((element) => revealObserver.observe(element));
+}
+
+// This static site opens a draft for the visitor to review; it does not send the enquiry.
 const tradeForm = document.getElementById("trade-enquiry-form");
 const tradeStatus = document.getElementById("trade-form-status");
 const tradeFallback = document.getElementById("trade-whatsapp-fallback");
 
 if (tradeForm && tradeStatus && tradeFallback) {
-  tradeForm.hidden = false;
-
   tradeForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
     const fields = new FormData(tradeForm);
     const lines = [
-      "Trade enquiry for Maison du Loom",
+      "Catalogue and private consultation request for Maison du Loom",
       "Name: " + fields.get("name"),
       "Email: " + fields.get("email"),
       "Destination country: " + fields.get("destination")
@@ -133,10 +100,10 @@ if (tradeForm && tradeStatus && tradeFallback) {
     if (whatsappWindow) {
       whatsappWindow.opener = null;
       tradeFallback.hidden = true;
-      tradeStatus.textContent = "WhatsApp opened with your draft. Review the details and press Send there.";
+      tradeStatus.textContent = "WhatsApp opened with your catalogue request. Review the details and press Send there.";
     } else {
       tradeFallback.hidden = false;
-      tradeStatus.textContent = "Your draft is ready. Use the link below to open WhatsApp and review it before sending.";
+      tradeStatus.textContent = "Your catalogue request is ready. Use the link below to open WhatsApp and review it before sending.";
     }
   });
 }
